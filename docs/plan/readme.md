@@ -14,14 +14,15 @@ CLI._
 
 - [x] Task: Set up the monorepo directory structure (`api/`, `web/`, `cli/`).
 - [x] Task: Initialize the Python backend project (FastAPI) in `api/`.
-- [ ] Task: Initialize the React frontend project (Vite) in `web/`.
+- [x] Task: Define frontend tech stack spec (Next.js, TypeScript, Tailwind, shadcn/ui, lucide-react, Zustand, TanStack Query, React Hook Form, Zod).
+- [x] Task: Initialize the Next.js frontend project in `web/` using the defined tech stack.
 - [ ] Task: Initialize the Python CLI project (Typer) in `cli/`.
 - [ ] Task: Add basic configuration for linters and formatters (e.g., Ruff, Prettier) with pre-commit hooks.
 - [ ] Task: Create a root `README.md` explaining the project structure and setup instructions.
 
 **Story: Formal Project Documentation**
 
-- [ ] Task: Create `docs/design/tech_stack.md` detailing the full tech stack.
+- [ ] Task: Create `docs/design/tech_stack.md` detailing the full tech stack (backend, frontend, and tooling).
 - [ ] Task: Update `docs/design/architecture.md` with the expanded pipeline and Worker architecture.
 - [ ] Task: Create `docs/design/principles.md` outlining the core development philosophies.
 - [ ] Task: Create `docs/TESTING_STRATEGY.md` outlining the pyramid approach (Unit, Integration, E2E).
