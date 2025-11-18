@@ -17,7 +17,7 @@ CLI._
 - [x] Task: Define frontend tech stack spec (Next.js, TypeScript, Tailwind, shadcn/ui, lucide-react, Zustand, TanStack Query, React Hook Form, Zod).
 - [x] Task: Initialize the Next.js frontend project in `web/` using the defined tech stack.
 - [x] Task: Initialize the Python CLI project (Typer) in `cli/`.
-- [ ] Task: Add basic configuration for linters and formatters (e.g., Ruff, Prettier) with pre-commit hooks.
+- [x] Task: Add basic configuration for linters and formatters (e.g., Ruff, Prettier) with pre-commit hooks.
 - [ ] Task: Create a root `README.md` explaining the project structure and setup instructions.
 
 **Story: Formal Project Documentation**
