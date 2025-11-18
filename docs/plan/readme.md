@@ -13,7 +13,7 @@ CLI._
 **Story: Initial Project Scaffolding**
 
 - [x] Task: Set up the monorepo directory structure (`api/`, `web/`, `cli/`).
-- [ ] Task: Initialize the Python backend project (FastAPI) in `api/`.
+- [x] Task: Initialize the Python backend project (FastAPI) in `api/`.
 - [ ] Task: Initialize the React frontend project (Vite) in `web/`.
 - [ ] Task: Initialize the Python CLI project (Typer) in `cli/`.
 - [ ] Task: Add basic configuration for linters and formatters (e.g., Ruff, Prettier) with pre-commit hooks.
