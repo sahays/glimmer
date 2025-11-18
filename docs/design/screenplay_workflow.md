@@ -5,6 +5,7 @@ This document outlines the workflow for writing a screenplay, focusing on how it
 ### The "Catch-22" Solution
 
 The `ScreenplayAgent` is designed to handle characters dynamically.
+
 - **Placeholder Recognition:** It identifies any capitalized name before dialogue as a character.
 - **Automatic Linking:** If the character exists in the "Character Bucket," it links to their profile to inform their dialogue.
 - **In-Session Creation:** If the character is new, the CUI pauses the session and prompts the user to quickly define them. This allows for a "write-first, detail-later" creative process.
