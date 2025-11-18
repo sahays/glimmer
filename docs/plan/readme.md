@@ -23,7 +23,7 @@ CLI._
 **Story: Formal Project Documentation**
 
 - [x] Task: Create `docs/design/tech_stack.md` detailing the full tech stack (backend, frontend, and tooling).
-- [ ] Task: Update `docs/design/architecture.md` with the expanded pipeline and Worker architecture.
+- [x] Task: Update `docs/design/architecture.md` with the expanded pipeline and Worker architecture.
 - [ ] Task: Create `docs/design/principles.md` outlining the core development philosophies.
 - [ ] Task: Create `docs/TESTING_STRATEGY.md` outlining the pyramid approach (Unit, Integration, E2E).
 
