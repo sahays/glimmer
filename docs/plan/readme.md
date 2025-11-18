@@ -24,7 +24,7 @@ CLI._
 
 - [x] Task: Create `docs/design/tech_stack.md` detailing the full tech stack (backend, frontend, and tooling).
 - [x] Task: Update `docs/design/architecture.md` with the expanded pipeline and Worker architecture.
-- [ ] Task: Create `docs/design/principles.md` outlining the core development philosophies.
+- [x] Task: Create `docs/design/principles.md` outlining the core development philosophies.
 - [ ] Task: Create `docs/TESTING_STRATEGY.md` outlining the pyramid approach (Unit, Integration, E2E).
 
 **Story: Database & Expanded Core Models**
@@ -49,6 +49,19 @@ CLI._
 - [ ] Task: Set up `pytest` for the backend, including utilities for managing a test database.
 - [ ] Task: Set up `Vitest` and `React Testing Library` for frontend component and integration tests.
 - [ ] Task: Set up `Playwright` for critical-path E2E tests.
+
+**Story: API Security & Configuration**
+
+- [ ] Task: Configure CORS middleware in FastAPI to allow requests from the frontend origin.
+- [ ] Task: Implement IP-based rate limiting for API endpoints, with stricter limits on AI-related routes.
+- [ ] Task: Add a basic honeypot field to user input forms as a simple bot detection measure.
+
+**Story: Cloud Integration & Asset Storage**
+
+- [ ] Task: Set up a Google Cloud Storage (GCS) bucket for asset storage.
+- [ ] Task (Backend): Implement an API endpoint to generate GCS pre-signed URLs for secure file uploads.
+- [ ] Task (Frontend): Implement client-side logic to fetch pre-signed URLs and upload files directly to GCS.
+- [ ] Task (Database): Update asset models (`Audio`, `Video`, etc.) to store a GCS object key instead of file data.
 
 ---
 
@@ -88,8 +101,14 @@ _Goal: Develop the user-facing web application, including the conversational int
 
 **Story: User Authentication & Project Dashboard**
 
-- [ ] Task: Implement user sign-up and login pages.
+- [ ] Task: Set up Google OAuth 2.0 credentials in Google Cloud Console for local development (using `localhost`).
+
+- [ ] Task (Backend): Implement the Google OAuth callback endpoint, token validation, and JWT session creation.
+
+- [ ] Task (Frontend): Implement the "Login with Google" button and the client-side authentication flow.
+
 - [ ] Task: Create a project dashboard to view, create, and delete projects.
+
 - [ ] Task: Write E2E test for the complete user sign-up and project creation flow.
 
 **Story: The Conversational UI (Session View)**
