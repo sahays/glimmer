@@ -18,7 +18,7 @@ CLI._
 - [x] Task: Initialize the Next.js frontend project in `web/` using the defined tech stack.
 - [x] Task: Initialize the Python CLI project (Typer) in `cli/`.
 - [x] Task: Add basic configuration for linters and formatters (e.g., Ruff, Prettier) with pre-commit hooks.
-- [ ] Task: Create a root `README.md` explaining the project structure and setup instructions.
+- [x] Task: Create a root `README.md` explaining the project structure and setup instructions.
 
 **Story: Formal Project Documentation**
 
