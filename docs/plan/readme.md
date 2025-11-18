@@ -29,7 +29,7 @@ CLI._
 
 **Story: Database & Expanded Core Models**
 
-- [ ] Task: Set up database solution using Postgres with SQLAlchemy ORM.
+- [x] Task: Set up database solution using Postgres with SQLAlchemy ORM.
 - [ ] Task: Define initial database models for `Project`, `User`, and `ConversationHistory`.
 - [ ] Task: Define models for Pre-Production Buckets: `Character`, `Screenplay`, `Prompt`, `Audio`, `Video`, `Music`.
 - [ ] Task: Define model for the Production Bucket: `Assembly` (timeline/sequence data).
