@@ -9,6 +9,7 @@ All code contributed to the Glimmer project should be written with the following
 - **SOLID:** Follow the five SOLID principles of object-oriented design to create understandable, maintainable, and flexible software.
 - **KISS (Keep It Simple, Stupid):** Strive for simplicity. Avoid unnecessary complexity and favor the simplest solution that effectively solves the problem.
 - **DRY (Don't Repeat Yourself):** Avoid duplicating code. Abstract and reuse common logic and components to make the codebase easier to maintain and less prone to bugs.
+- **Strong Typing:** All new Python code should use modern type hints. This is not optional. Strong typing helps us catch bugs early, improves code clarity, and makes the system easier to refactor and maintain.
 
 ---
 
