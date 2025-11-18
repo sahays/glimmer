@@ -7,8 +7,22 @@ Glimmer is a creative studio powered by generative AI. It uses a hybrid Conversa
 This project is a monorepo containing three distinct applications:
 
 - `api/`: The core backend written in Python with FastAPI. It handles the AI agent orchestration, database interactions, and serves the primary API for the web frontend.
+
 - `web/`: The frontend application built with Next.js. This is the main user interface for interacting with the Glimmer studio.
+
 - `cli/`: A command-line interface written in Python with Typer. It provides utility scripts and direct access to backend services for power users and developers.
+
+## Design & Documentation
+
+This project is guided by a set of core design and planning documents. For a deeper understanding of the project's architecture, principles, and tech stack, please refer to the following:
+
+- [**Architecture Overview**](./docs/design/architecture.md): A high-level look at the system's structure and data flow.
+
+- [**Development Principles**](./docs/design/principles.md): The core philosophies that guide our development process.
+
+- [**Tech Stack**](./docs/design/tech_stack.md): A complete list of the technologies and libraries used in the project.
+
+- [**Testing Strategy**](./docs/testing-strategy.md): Our approach to ensuring code quality and reliability.
 
 ## Prerequisites
 
