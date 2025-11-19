@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/projects")
+@RequestMapping("/v1/projects")
 @RequiredArgsConstructor
 public class ProjectController {
 

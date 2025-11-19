@@ -4,9 +4,7 @@ PROJECT_ROOT="$SCRIPT_DIR/.."
 
 cd "$PROJECT_ROOT/cli"
 
-if [ ! -f "target/cli-0.0.1-SNAPSHOT.jar" ]; then
-    echo "Building CLI..."
-    ./mvnw clean package -DskipTests -q
-fi
+echo "Building CLI..."
+./mvnw clean package -DskipTests -q
 
 java -jar target/cli-0.0.1-SNAPSHOT.jar "$@"

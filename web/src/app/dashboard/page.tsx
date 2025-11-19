@@ -12,7 +12,7 @@ interface Project {
 }
 
 async function fetchProjects() {
-  const res = await api.get<Project[]>("/projects/");
+  const res = await api.get<Project[]>("/projects");
   return res.data;
 }
 
