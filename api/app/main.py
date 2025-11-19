@@ -1,19 +1,13 @@
+from app.dependencies import get_db
+from app.routers import projects, users
 from fastapi import Depends, FastAPI
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from .database import SessionLocal
+app = FastAPI(title="Glimmer API", version="0.1.0")
 
-app = FastAPI()
-
-
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+app.include_router(users.router)
+app.include_router(projects.router)
 
 
 @app.get("/")

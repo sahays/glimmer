@@ -105,9 +105,13 @@ _Goal: Develop the user-facing web application, including the conversational int
 
 - [ ] Task (Backend): Implement the Google OAuth callback endpoint, token validation, and JWT session creation.
 
+- [x] Task (Backend): Implement CRUD API endpoints for `Users` and `Projects` (to enable dashboard and CLI).
+
+- [x] Task (CLI): Implement `projects` command group to list and create projects via the API (System verification).
+
 - [ ] Task (Frontend): Implement the "Login with Google" button and the client-side authentication flow.
 
-- [ ] Task: Create a project dashboard to view, create, and delete projects.
+- [ ] Task (Frontend): Create a project dashboard to view, create, and delete projects.
 
 - [ ] Task: Write E2E test for the complete user sign-up and project creation flow.
 
