@@ -37,10 +37,10 @@ _Goal: Rewrite the CLI tool in Java to maintain a single-language backend ecosys
 
 **Story: Java CLI Setup**
 
-- [ ] Task: Initialize a new module or project for the CLI (e.g., using Spring Shell or Picocli).
-- [ ] Task: Implement the `projects` command group (list, create) in Java.
-- [ ] Task: Implement the `users` command group in Java.
-- [ ] Task: Set up a build task to produce an executable JAR or native binary.
+- [x] Task: Initialize a new module or project for the CLI (e.g., using Spring Shell or Picocli).
+- [x] Task: Implement the `projects` command group (list, create) in Java.
+- [x] Task: Implement the `users` command group in Java.
+- [x] Task: Set up a build task to produce an executable JAR or native binary.
 
 ---
 
@@ -51,7 +51,7 @@ _Goal: Develop the user-facing web application. (Frontend remains TypeScript/Nex
 **Story: User Authentication & Project Dashboard**
 
 - [x] Task (Legacy Backend): Implement CRUD API endpoints for `Users` and `Projects`.
-- [x] Task (Legacy CLI): Implement `projects` command group via API.
+- [x] Task (Java CLI): Implement `projects` command group to list and create projects via the API (Replaced Python CLI).
 - [ ] Task (Java Backend): Re-verify Frontend integration with new Java API.
 - [ ] Task: Set up Google OAuth 2.0 credentials.
 - [ ] Task (Frontend): Implement "Login with Google".

@@ -1,0 +1,8 @@
+spring:
+  shell:
+    interactive:
+      enabled: true
+
+glimmer:
+  api:
+    url: http://localhost:8000

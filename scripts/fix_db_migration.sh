@@ -3,7 +3,9 @@
 # Load environment variables from .env
 if [ -f .env ]; then
   echo "Loading environment variables from .env..."
-  export $(grep -v '^#' .env | xargs)
+  set -a
+  source .env
+  set +a
 fi
 
 # Navigate to api directory
