@@ -4,13 +4,11 @@ Glimmer is a creative studio powered by generative AI. It uses a hybrid Conversa
 
 ## Project Structure
 
-This project is a monorepo containing three distinct applications:
+This project is a monorepo containing two distinct applications:
 
 - `apis/`: The core backend written in **Java (Spring Boot)**. It handles the AI agent orchestration, database interactions, and serves the primary API for the web frontend.
 
 - `web/`: The frontend application built with **Next.js**. This is the main user interface for interacting with the Glimmer studio.
-
-- `cli/`: A command-line interface written in **Java (Picocli)**. It provides utility scripts and direct access to backend services for power users and developers.
 
 ## Design & Documentation
 
@@ -28,7 +26,7 @@ This project is guided by a set of core design and planning documents. For a dee
 
 Before you begin, ensure you have the following installed:
 
-- **Java 21+**: JDK 21 is required for the backend and CLI. Recommended distribution: [Eclipse Temurin](https://adoptium.net/).
+- **Java 21+**: JDK 21 is required for the backend. Recommended distribution: [Eclipse Temurin](https://adoptium.net/).
 - **Node.js 20.x+**: Required for the frontend. Manage with `nvm` if possible.
 - **Git**: For version control.
 - **PostgreSQL**: A local running instance (or Docker container).
@@ -67,16 +65,7 @@ Use the helper script to start the backend (this automatically loads your `.env`
 
 The API will be available at `http://localhost:8000`.
 
-### 4. Run the CLI
-
-You can build and run the CLI using the helper script:
-
-```bash
-./scripts/run_cli.sh --help
-# Example: ./scripts/run_cli.sh users list
-```
-
-### 5. Run the Web Frontend
+### 4. Run the Web Frontend
 
 ```bash
 cd web

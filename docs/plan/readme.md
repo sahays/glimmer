@@ -31,28 +31,13 @@ _Goal: Replace the Python FastAPI backend with a scalable, robust Java Spring Bo
 
 ---
 
-### Epic 2: CLI Migration to Java
-
-_Goal: Rewrite the CLI tool in Java to maintain a single-language backend ecosystem._
-
-**Story: Java CLI Setup**
-
-- [x] Task: Initialize a new module or project for the CLI (e.g., using Spring Shell or Picocli).
-- [x] Task: Implement the `projects` command group (list, create) in Java.
-- [x] Task: Implement the `users` command group in Java.
-- [x] Task: Migrate from Spring Shell to Picocli (Standardization).
-- [x] Task: Set up a build task to produce an executable JAR or native binary.
-
----
-
-### Epic 3: Web Frontend - The Creative Studio
+### Epic 2: Web Frontend - The Creative Studio
 
 _Goal: Develop the user-facing web application. (Frontend remains TypeScript/Next.js)._
 
 **Story: User Authentication & Project Dashboard**
 
 - [x] Task (Legacy Backend): Implement CRUD API endpoints for `Users` and `Projects`.
-- [x] Task (Java CLI): Implement `projects` command group to list and create projects via the API (Replaced Python CLI).
 - [ ] Task (Java Backend): Re-verify Frontend integration with new Java API.
 - [ ] Task: Set up Google OAuth 2.0 credentials.
 - [ ] Task (Frontend): Implement "Login with Google".
@@ -60,13 +45,13 @@ _Goal: Develop the user-facing web application. (Frontend remains TypeScript/Nex
 
 ---
 
-### Epic 4: Core AI Agent Framework (Java)
+### Epic 3: Core AI Agent Framework (Java)
 
 _Goal: Build the backend infrastructure for the CUI using Java and Spring AI/LangChain4j._
 
 **Story: CUI Orchestrator & Agent Invocation**
 
-- [ ] Task: Implement the main CUI endpoint in Spring Boot (WebSocket/SSE).
+- [x] Task: Implement the main CUI endpoint in Spring Boot (WebSocket/SSE).
 - [ ] Task: Develop the core Orchestrator service using Java AI libraries.
 - [ ] Task: Implement Function Calling mechanism in Java.
 
@@ -76,7 +61,7 @@ _Goal: Build the backend infrastructure for the CUI using Java and Spring AI/Lan
 
 ---
 
-### Epic 5: Production & Export
+### Epic 4: Production & Export
 
 _Goal: Build assembly and export functionality._
 

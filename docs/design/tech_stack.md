@@ -35,17 +35,6 @@ The frontend is a modern web application built for a rich, interactive user expe
 
 ---
 
-## Command-Line Interface (`cli/`)
-
-The CLI is a Java-based tool for developers and power users.
-
-- **Framework:** **Spring Shell** or **Picocli**
-  - **Why:** powerful frameworks for building CLI applications in the Java ecosystem.
-- **Distribution:** **JBang** or **GraalVM Native Image**
-  - **Why:** To provide a single-binary or easy-to-run experience without requiring complex setup.
-
----
-
 ## Monorepo Tooling & Standards
 
 - **Code Formatter (Java):** **Spotless (Google Java Format)**
