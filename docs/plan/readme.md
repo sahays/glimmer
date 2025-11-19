@@ -36,14 +36,6 @@ CLI._
 - [x] Task: Define model for Post-Production: `RenderJob` (to track export progress and final output).
 - [x] Task: Implement initial database migration scripts (e.g., using Alembic).
 
-**Story: Containerization & Deployment Scripts**
-
-- [ ] Task: Create `Dockerfile` for the FastAPI backend (`api/`).
-- [ ] Task: Create `Dockerfile` for the React frontend (`web/`).
-- [ ] Task: Create `docker-compose.yml` for local development (api, web, postgres, memorystore/redis).
-- [ ] Task: Write deployment scripts for Cloud Run with clear environment separation (e.g., `.env.dev`, `.env.prod`).
-- [ ] Task: Document the local setup and production deployment process.
-
 **Story: Testing Framework Setup**
 
 - [ ] Task: Set up `pytest` for the backend, including utilities for managing a test database.
@@ -56,16 +48,43 @@ CLI._
 - [ ] Task: Implement IP-based rate limiting for API endpoints, with stricter limits on AI-related routes.
 - [ ] Task: Add a basic honeypot field to user input forms as a simple bot detection measure.
 
-**Story: Cloud Integration & Asset Storage**
+---
 
-- [ ] Task: Set up a Google Cloud Storage (GCS) bucket for asset storage.
-- [ ] Task (Backend): Implement an API endpoint to generate GCS pre-signed URLs for secure file uploads.
-- [ ] Task (Frontend): Implement client-side logic to fetch pre-signed URLs and upload files directly to GCS.
-- [ ] Task (Database): Update asset models (`Audio`, `Video`, etc.) to store a GCS object key instead of file data.
+### Epic 2: Web Frontend - The Creative Studio
+
+_Goal: Develop the user-facing web application, including the conversational interface and the asset management views.
+We prioritize this to establish the visual shell of the application._
+
+**Story: User Authentication & Project Dashboard**
+
+- [x] Task (Backend): Implement CRUD API endpoints for `Users` and `Projects` (to enable dashboard and CLI).
+- [x] Task (CLI): Implement `projects` command group to list and create projects via the API (System verification).
+- [ ] Task: Set up Google OAuth 2.0 credentials in Google Cloud Console for local development (using `localhost`).
+- [ ] Task (Backend): Implement the Google OAuth callback endpoint, token validation, and JWT session creation.
+- [ ] Task (Frontend): Implement the "Login with Google" button and the client-side authentication flow.
+- [ ] Task (Frontend): Create a project dashboard to view, create, and delete projects.
+- [ ] Task: Write E2E test for the complete user sign-up and project creation flow.
+
+**Story: The Asset Buckets (GUI View)**
+
+- [ ] Task: Create a GUI view for the `Character` Bucket.
+- [ ] Task: Create a GUI view for the `Screenplay` Bucket.
+- [ ] Task: Create a GUI view for the `Prompt` Bucket.
+- [ ] Task: Create GUI views for `Audio`, `Video`, and `Music` Buckets, including media players.
+- [ ] Task: Implement basic CRUD functionality for all assets directly from the GUI.
+- [ ] Task: Write component tests for the main Bucket UI components.
+
+**Story: The Conversational UI (Session View)**
+
+- [ ] Task: Build the main chat interface component in React.
+- [ ] Task: Implement the WebSocket connection to the backend CUI endpoint.
+- [ ] Task: Implement rendering for assistant messages, user messages, and tool interaction statuses.
+- [ ] Task: Implement UI for displaying all generated asset types (text, images, audio, video).
+- [ ] Task: Write integration tests for the chat component's state management.
 
 ---
 
-### Epic 2: Core AI Agent Framework
+### Epic 3: Core AI Agent Framework
 
 _Goal: Build the backend infrastructure for the CUI, including the main orchestrator and a full suite of specialist
 agents._
@@ -92,45 +111,6 @@ agents._
 - [ ] Task: Implement `VideoAgent` for generating short video clips or storyboards.
 - [ ] Task: Write unit tests for agent data parsing and validation logic (using mocked AI responses).
 - [ ] Task: Register all new agent tools with the CUI Orchestrator.
-
----
-
-### Epic 3: Web Frontend - The Creative Studio
-
-_Goal: Develop the user-facing web application, including the conversational interface and the asset management views._
-
-**Story: User Authentication & Project Dashboard**
-
-- [ ] Task: Set up Google OAuth 2.0 credentials in Google Cloud Console for local development (using `localhost`).
-
-- [ ] Task (Backend): Implement the Google OAuth callback endpoint, token validation, and JWT session creation.
-
-- [x] Task (Backend): Implement CRUD API endpoints for `Users` and `Projects` (to enable dashboard and CLI).
-
-- [x] Task (CLI): Implement `projects` command group to list and create projects via the API (System verification).
-
-- [ ] Task (Frontend): Implement the "Login with Google" button and the client-side authentication flow.
-
-- [ ] Task (Frontend): Create a project dashboard to view, create, and delete projects.
-
-- [ ] Task: Write E2E test for the complete user sign-up and project creation flow.
-
-**Story: The Conversational UI (Session View)**
-
-- [ ] Task: Build the main chat interface component in React.
-- [ ] Task: Implement the WebSocket connection to the backend CUI endpoint.
-- [ ] Task: Implement rendering for assistant messages, user messages, and tool interaction statuses.
-- [ ] Task: Implement UI for displaying all generated asset types (text, images, audio, video).
-- [ ] Task: Write integration tests for the chat component's state management.
-
-**Story: The Asset Buckets (GUI View)**
-
-- [ ] Task: Create a GUI view for the `Character` Bucket.
-- [ ] Task: Create a GUI view for the `Screenplay` Bucket.
-- [ ] Task: Create a GUI view for the `Prompt` Bucket.
-- [ ] Task: Create GUI views for `Audio`, `Video`, and `Music` Buckets, including media players.
-- [ ] Task: Implement basic CRUD functionality for all assets directly from the GUI.
-- [ ] Task: Write component tests for the main Bucket UI components.
 
 ---
 
@@ -173,3 +153,24 @@ _Goal: Provide tools to render the final product and export it for use in extern
 - [ ] Task: Implement a "Render" button in the Assembly view.
 - [ ] Task: Create a GUI view to see the list of `RenderJobs`, their status (pending, rendering, complete, failed), and
       a link to download the final video.
+
+---
+
+### Epic 6: Infrastructure & Deployment
+
+_Goal: Prepare the application for production, including containerization, cloud setup, and deployment automation._
+
+**Story: Containerization & Deployment Scripts**
+
+- [ ] Task: Create `Dockerfile` for the FastAPI backend (`api/`).
+- [ ] Task: Create `Dockerfile` for the React frontend (`web/`).
+- [ ] Task: Create `docker-compose.yml` for local development (api, web, postgres, memorystore/redis).
+- [ ] Task: Write deployment scripts for Cloud Run with clear environment separation (e.g., `.env.dev`, `.env.prod`).
+- [ ] Task: Document the local setup and production deployment process.
+
+**Story: Cloud Integration & Asset Storage**
+
+- [ ] Task: Set up a Google Cloud Storage (GCS) bucket for asset storage.
+- [ ] Task (Backend): Implement an API endpoint to generate GCS pre-signed URLs for secure file uploads.
+- [ ] Task (Frontend): Implement client-side logic to fetch pre-signed URLs and upload files directly to GCS.
+- [ ] Task (Database): Update asset models (`Audio`, `Video`, etc.) to store a GCS object key instead of file data.
