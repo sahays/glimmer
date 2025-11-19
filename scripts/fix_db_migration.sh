@@ -1,18 +1,18 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+PROJECT_ROOT="$SCRIPT_DIR/.."
 
-# Load environment variables from .env
-if [ -f .env ]; then
+# Load environment variables from .env at root
+if [ -f "$PROJECT_ROOT/.env" ]; then
   echo "Loading environment variables from .env..."
   set -a
-  source .env
+  source "$PROJECT_ROOT/.env"
   set +a
 fi
 
-# Navigate to api directory
-cd apis
+cd "$PROJECT_ROOT/apis"
 
 echo "Resetting Database (Clean + Migrate)..."
-# Use -Dflyway.cleanDisabled=false to allow clean
 ./mvnw flyway:clean flyway:migrate \
     -Dflyway.url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME} \
     -Dflyway.user=${DB_USERNAME} \

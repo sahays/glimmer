@@ -1,13 +1,14 @@
 #!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+PROJECT_ROOT="$SCRIPT_DIR/.."
 
-# Load environment variables from .env if it exists
-if [ -f .env ]; then
+# Load environment variables from .env at root
+if [ -f "$PROJECT_ROOT/.env" ]; then
   echo "Loading environment variables from .env..."
-  export $(grep -v '^#' .env | xargs)
+  set -a
+  source "$PROJECT_ROOT/.env"
+  set +a
 fi
 
-# Navigate to the Java backend directory
-cd apis
-
-# Run the Spring Boot application
+cd "$PROJECT_ROOT/apis"
 ./mvnw spring-boot:run

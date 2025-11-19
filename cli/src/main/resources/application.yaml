@@ -1,7 +1,6 @@
 spring:
-  shell:
-    interactive:
-      enabled: true
+  main:
+    web-application-type: none
 
 glimmer:
   api:

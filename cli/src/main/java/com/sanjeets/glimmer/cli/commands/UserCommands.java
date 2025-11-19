@@ -5,58 +5,45 @@ import com.sanjeets.glimmer.cli.model.CreateUserDTO;
 import com.sanjeets.glimmer.cli.model.UserDTO;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.shell.standard.ShellComponent;
-import org.springframework.shell.standard.ShellMethod;
-import org.springframework.shell.standard.ShellOption;
-import org.springframework.shell.table.ArrayTableModel;
-import org.springframework.shell.table.BorderStyle;
-import org.springframework.shell.table.TableBuilder;
-import org.springframework.shell.table.TableModel;
+import org.springframework.stereotype.Component;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 
-@ShellComponent
+@Component
+@Command(name = "users", description = "Manage users", mixinStandardHelpOptions = true)
 @RequiredArgsConstructor
 public class UserCommands {
 
     private final GlimmerApiClient apiClient;
 
-    @ShellMethod(key = "users list", value = "List all users")
-    public void listUsers() {
+    @Command(name = "list", description = "List all users")
+    public void list() {
         try {
             List<UserDTO> users = apiClient.listUsers();
             if (users.isEmpty()) {
                 System.out.println("No users found.");
                 return;
             }
-
-            Object[][] data = new Object[users.size() + 1][4];
-            data[0] = new Object[]{"ID", "Email", "Name", "Google ID"};
-
-            for (int i = 0; i < users.size(); i++) {
-                UserDTO u = users.get(i);
-                data[i + 1] = new Object[]{
-                    u.getUserId(),
-                    u.getEmail(),
-                    u.getFullName(),
-                    u.getGoogleId()
-                };
+            System.out.printf("%-36s %-30s %-20s %-15s%n", "ID", "Email", "Name", "Google ID");
+            System.out.println("-".repeat(105));
+            for (UserDTO u : users) {
+                System.out.printf("%-36s %-30s %-20s %-15s%n",
+                    u.getUserId(), u.getEmail(),
+                    u.getFullName() != null ? u.getFullName() : "",
+                    u.getGoogleId());
             }
-
-            TableModel model = new ArrayTableModel(data);
-            TableBuilder tableBuilder = new TableBuilder(model);
-            tableBuilder.addFullBorder(BorderStyle.fancy_light);
-            System.out.println(tableBuilder.build().render(80));
-
         } catch (Exception e) {
             System.err.println("Error fetching users: " + e.getMessage());
         }
     }
 
-    @ShellMethod(key = "users create", value = "Create a new user")
-    public void createUser(
-        @ShellOption(help = "Email address") String email,
-        @ShellOption(help = "Google ID") String googleId,
-        @ShellOption(help = "Full Name", defaultValue = ShellOption.NULL) String fullName,
-        @ShellOption(help = "Picture URL", defaultValue = ShellOption.NULL) String pictureUrl
+    @Command(name = "create", description = "Create a new user")
+    public void create(
+        @Option(names = "--email", required = true, description = "Email address") String email,
+        @Option(names = "--google-id", required = true, description = "Google ID") String googleId,
+        @Option(names = "--full-name", description = "Full Name") String fullName,
+        @Option(names = "--picture-url", description = "Picture URL") String pictureUrl
     ) {
         try {
             CreateUserDTO dto = new CreateUserDTO();

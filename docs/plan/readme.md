@@ -40,6 +40,7 @@ _Goal: Rewrite the CLI tool in Java to maintain a single-language backend ecosys
 - [x] Task: Initialize a new module or project for the CLI (e.g., using Spring Shell or Picocli).
 - [x] Task: Implement the `projects` command group (list, create) in Java.
 - [x] Task: Implement the `users` command group in Java.
+- [ ] Task: Migrate from Spring Shell to Picocli (Standardization).
 - [x] Task: Set up a build task to produce an executable JAR or native binary.
 
 ---
