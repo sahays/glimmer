@@ -31,10 +31,10 @@ CLI._
 
 - [x] Task: Set up database solution using Postgres with SQLAlchemy ORM.
 - [x] Task: Define initial database models for `Project`, `User`, and `ConversationHistory`.
-- [ ] Task: Define models for Pre-Production Buckets: `Character`, `Screenplay`, `Prompt`, `Audio`, `Video`, `Music`.
-- [ ] Task: Define model for the Production Bucket: `Assembly` (timeline/sequence data).
-- [ ] Task: Define model for Post-Production: `RenderJob` (to track export progress and final output).
-- [ ] Task: Implement initial database migration scripts (e.g., using Alembic).
+- [x] Task: Define models for Pre-Production Buckets: `Character`, `Screenplay`, `Prompt`, `Audio`, `Video`, `Music`.
+- [x] Task: Define model for the Production Bucket: `Assembly` (timeline/sequence data).
+- [x] Task: Define model for Post-Production: `RenderJob` (to track export progress and final output).
+- [x] Task: Implement initial database migration scripts (e.g., using Alembic).
 
 **Story: Containerization & Deployment Scripts**
 
