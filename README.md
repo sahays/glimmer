@@ -6,11 +6,11 @@ Glimmer is a creative studio powered by generative AI. It uses a hybrid Conversa
 
 This project is a monorepo containing three distinct applications:
 
-- `api/`: The core backend written in Python with FastAPI. It handles the AI agent orchestration, database interactions, and serves the primary API for the web frontend.
+- `apis/`: The core backend written in **Java (Spring Boot)**. It handles the AI agent orchestration, database interactions, and serves the primary API for the web frontend.
 
-- `web/`: The frontend application built with Next.js. This is the main user interface for interacting with the Glimmer studio.
+- `web/`: The frontend application built with **Next.js**. This is the main user interface for interacting with the Glimmer studio.
 
-- `cli/`: A command-line interface written in Python with Typer. It provides utility scripts and direct access to backend services for power users and developers.
+- `cli/`: A command-line interface written in **Java (Picocli)**. It provides utility scripts and direct access to backend services for power users and developers.
 
 ## Design & Documentation
 
@@ -28,10 +28,10 @@ This project is guided by a set of core design and planning documents. For a dee
 
 Before you begin, ensure you have the following installed:
 
-- **Python 3.14+**: It is recommended to manage Python versions with a tool like `pyenv`.
-- **Node.js 20.x+**: It is recommended to manage Node versions with a tool like `nvm`.
+- **Java 21+**: JDK 21 is required for the backend and CLI. Recommended distribution: [Eclipse Temurin](https://adoptium.net/).
+- **Node.js 20.x+**: Required for the frontend. Manage with `nvm` if possible.
 - **Git**: For version control.
-- **(macOS)** **Homebrew**: For installing dependencies like the latest Python version.
+- **PostgreSQL**: A local running instance (or Docker container).
 
 ## Development Setup
 
@@ -44,75 +44,61 @@ git clone <repository-url>
 cd glimmer
 ```
 
-### 2. Set Up Backend & CLI Environments
+### 2. Configure Environment
 
-The `api` and `cli` projects each have their own Python virtual environment.
+Create a `.env` file in the project root with your database credentials:
 
-```bash
-# Set up the API backend
-cd api
-python3.14 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cd ..
-
-# Set up the CLI
-cd cli
-python3.14 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cd ..
+```properties
+DATABASE_URL=jdbc:postgresql://localhost:5432/glimmer
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=glimmer
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
 ```
 
-### 3. Set Up Frontend Environment
+### 3. Run the Backend API
 
-The `web` project uses NPM for package management.
+Use the helper script to start the backend (this automatically loads your `.env` variables):
 
 ```bash
-# Set up the web frontend
+./scripts/start_apis.sh
+```
+
+The API will be available at `http://localhost:8000`.
+
+### 4. Run the CLI
+
+You can build and run the CLI using the helper script:
+
+```bash
+./scripts/run_cli.sh --help
+# Example: ./scripts/run_cli.sh users list
+```
+
+### 5. Run the Web Frontend
+
+```bash
 cd web
 npm install
-cd ..
+npm run dev
 ```
 
-### 4. Install Pre-Commit Hooks
+The web application will be available at `http://localhost:3000`.
 
-This project uses pre-commit hooks to automatically format and lint code before each commit. This is a crucial one-time setup step.
+### Database Reset
+
+If you need to reset the database (clean and re-migrate), use:
 
 ```bash
-# From the project root, activate one of the Python environments
-cd api
-source .venv/bin/activate
-
-# Install the hooks from the root directory
-cd ..
-pre-commit install
+./scripts/fix_db_migration.sh
 ```
 
-### 5. Running the Applications
+## Pre-Commit Hooks
 
-- **To run the API server:**
+To ensure code quality, install the pre-commit hooks:
 
-  ```bash
-  cd api
-  source .venv/bin/activate
-  uvicorn main:app --reload
-  ```
-
-  The API will be available at `http://127.0.0.1:8000`.
-
-- **To run the Web frontend:**
-
-  ```bash
-  cd web
-  npm run dev
-  ```
-
-  The web application will be available at `http://localhost:3000`.
-
-- **To use the CLI:**
-  ```bash
-  cd cli
-  source .venv/bin/activate
-  python main.py --help
-  ```
+```bash
+brew install pre-commit # macOS
+pre-commit install
+```
